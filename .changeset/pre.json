@@ -4,7 +4,5 @@
   "initialVersions": {
     "skuba": "4.2.0"
   },
-  "changesets": [
-    "honest-boxes-talk"
-  ]
+  "changesets": ["honest-boxes-talk"]
 }
