@@ -1,5 +1,27 @@
 # skuba
 
+## 4.2.1
+
+### Patch Changes
+
+- **lint, test:** Set timeout for Buildkite and GitHub integrations ([#835](https://github.com/seek-oss/skuba/pull/835))
+
+  Transient network failures can impact annotations and autofixes. We now specify a 30 second timeout for these integration features to prevent them from hanging and indefinitely preoccupying your build agents.
+
+- **template:** Time out Buildkite test steps after 10 minutes ([#842](https://github.com/seek-oss/skuba/pull/842))
+
+  Successful testing and linting should complete within this window. This timeout prevents commands from hanging and indefinitely preoccupying your Buildkite agents.
+
+  ```diff
+  steps:
+    - label: 🧪 Test & Lint
+  +   timeout_in_minutes: 10
+  ```
+
+- **cli:** Make warning logs more verbose ([#826](https://github.com/seek-oss/skuba/pull/826))
+
+- **build-package, lint:** Improve detection of SEEK Buildkite queues for serial execution ([#829](https://github.com/seek-oss/skuba/pull/829))
+
 ## 4.2.0
 
 ### Minor Changes
